@@ -6,7 +6,7 @@ class HelloWorldUser(HttpUser):
     def hello_world(self):
         login_data = {
             "email": "stefan+1@hivebuy.de",
-            "password": "Change-Me1!"
+            "password": ""
         }
 
         response = self.client.get(url="/api/auth/", data=login_data)
