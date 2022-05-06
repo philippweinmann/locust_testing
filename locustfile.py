@@ -1,13 +1,16 @@
 from locust import HttpUser, task
-from locust import events
 
 
+class HivebuyUser(HttpUser):
+    localhost = 'http://127.0.0.1:8000/'
+    host = localhost
+    min_wait = 1000
+    max_wait = 2000
 
-class HelloWorldUser(HttpUser):
     def on_start(self):
         login_data = {
             "email": "stefan+1@hivebuy.de",
-            "password": ""
+            "password": "Change-Me1!"
         }
 
         response = self.client.get(url="api/auth/", data=login_data)
