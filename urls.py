@@ -2,9 +2,9 @@ from enum import Enum
 
 
 class HivebuyUrls(Enum):
-    AUTH_URL = "api/auth/"
-    USER_URL = "api/company/user/"
-    PUR_URL = "api/company/purchase-request/"
+    AUTH_URL = "auth/"
+    USER_URL = "company/user/"
+    PUR_URL = "company/purchase-request/"
 
 
 class ConnectionUrls(Enum):
