@@ -16,9 +16,14 @@ class HivebuyUser(HttpUser):
         self.client.get(url=HivebuyUrls.AUTH_URL.value, data=login_data)
 
     @task
-    def hello_world(self):
+    def get_users(self):
         # get users
         self.client.get(url=HivebuyUrls.USER_URL.value)
 
+        # get purchase requests
+        self.client.get(url=HivebuyUrls.PUR_URL.value)
+
+    @task
+    def get_users(self):
         # get purchase requests
         self.client.get(url=HivebuyUrls.PUR_URL.value)
