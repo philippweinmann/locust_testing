@@ -4,7 +4,9 @@ import os
 
 
 class HivebuyUser(HttpUser):
-    host = ConnectionUrls.LOCALHOST.value
+    host = ConnectionUrls.STAGING.value
+    min_wait = 1000
+    max_wait = 2000
 
     def on_start(self):
         login_data = {
