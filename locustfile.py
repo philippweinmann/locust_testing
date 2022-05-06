@@ -13,13 +13,13 @@ class HivebuyUser(HttpUser):
             "password": os.environ.get("STEFAN_PASSWORD")
         }
 
-        response = self.client.get(url="api/auth/", data=login_data)
-        self.cookie_jar = response.cookies
+        # cookies are automatically saved and sent
+        self.client.get(url="api/auth/", data=login_data)
 
     @task
     def hello_world(self):
         user_url = "api/company/user/"
-        self.client.get(url=user_url, cookies=self.cookie_jar)
+        self.client.get(url=user_url)
 
         pur_url = "api/company/purchase-request/"
-        self.client.get(url=pur_url, cookies=self.cookie_jar)
+        self.client.get(url=pur_url)
