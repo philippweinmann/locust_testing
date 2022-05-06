@@ -1,11 +1,10 @@
 from locust import HttpUser, task
+from urls import HivebuyUrls, ConnectionUrls
 import os
 
+
 class HivebuyUser(HttpUser):
-    localhost = 'http://127.0.0.1:8000/'
-    host = localhost
-    min_wait = 1000
-    max_wait = 2000
+    host = ConnectionUrls.LOCALHOST.value
 
     def on_start(self):
         login_data = {
@@ -14,12 +13,12 @@ class HivebuyUser(HttpUser):
         }
 
         # cookies are automatically saved and sent
-        self.client.get(url="api/auth/", data=login_data)
+        self.client.get(url=HivebuyUrls.AUTH_URL.value, data=login_data)
 
     @task
     def hello_world(self):
-        user_url = "api/company/user/"
-        self.client.get(url=user_url)
+        # get users
+        self.client.get(url=HivebuyUrls.USER_URL.value)
 
-        pur_url = "api/company/purchase-request/"
-        self.client.get(url=pur_url)
+        # get purchase requests
+        self.client.get(url=HivebuyUrls.PUR_URL.value)
