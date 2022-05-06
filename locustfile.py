@@ -20,10 +20,7 @@ class HivebuyUser(HttpUser):
         # get users
         self.client.get(url=HivebuyUrls.USER_URL.value)
 
-        # get purchase requests
-        self.client.get(url=HivebuyUrls.PUR_URL.value)
-
     @task
-    def get_users(self):
+    def get_purchase_requests(self):
         # get purchase requests
         self.client.get(url=HivebuyUrls.PUR_URL.value)
