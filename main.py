@@ -1,6 +1,6 @@
 from locustfile import HivebuyUser
-from locust import env
+from locust import run_single_user
 
-if __name__ == '__main__':
-    environment = env.Environment()
-    HivebuyUser(environment).run()
+# for debugging purposes, activate gevent in pycharm for this to work
+if __name__ == "__main__":
+    run_single_user(HivebuyUser)
