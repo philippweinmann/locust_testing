@@ -1,5 +1,5 @@
 from locust import HttpUser, task
-
+import os
 
 class HivebuyUser(HttpUser):
     localhost = 'http://127.0.0.1:8000/'
@@ -9,8 +9,8 @@ class HivebuyUser(HttpUser):
 
     def on_start(self):
         login_data = {
-            "email": "stefan+1@hivebuy.de",
-            "password": "Change-Me1!"
+            "email": os.environ.get("STEFAN_EMAIL"),
+            "password": os.environ.get("STEFAN_PASSWORD")
         }
 
         response = self.client.get(url="api/auth/", data=login_data)
