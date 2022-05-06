@@ -13,6 +13,6 @@ jobs:
         with:
           LOCUSTFILE: "locustfile.py"
           URL: "https://backend.staging.hivebuy.de/api/"
-          USERS: "5"
-          RATE: "5"
+          USERS: "1"
+          RATE: "1"
           RUNTIME: "10s"

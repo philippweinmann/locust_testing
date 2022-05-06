@@ -10,8 +10,8 @@ class HivebuyUser(HttpUser):
 
     def on_start(self):
         login_data = {
-            "email": os.environ.get("STEFAN_EMAIL"),
-            "password": os.environ.get("STEFAN_PASSWORD")
+            "email": os.environ.get("STEFAN_EMAIL", "stefan+1@hivebuy.de"),
+            "password": os.environ.get("STEFAN_PASSWORD", "Change-Me1!")
         }
 
         # cookies are automatically saved and sent
