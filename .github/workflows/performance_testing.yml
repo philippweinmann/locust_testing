@@ -15,4 +15,4 @@ jobs:
           URL: "https://backend.staging.hivebuy.de/api/"
           USERS: "1"
           RATE: "1"
-          RUNTIME: "10s"
+          RUNTIME: "120s"
