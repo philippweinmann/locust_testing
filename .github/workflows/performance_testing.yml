@@ -12,7 +12,7 @@ jobs:
         uses: apardo04/locust-github-action@master
         with:
           LOCUSTFILE: "locustfile.py"
-          URL:  "https://google.com"
+          URL: "https://backend.staging.hivebuy.de/api/"
           USERS: "5"
           RATE: "5"
           RUNTIME: "10s"
