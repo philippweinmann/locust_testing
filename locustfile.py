@@ -4,7 +4,7 @@ import os
 
 
 class HivebuyUser(HttpUser):
-    host = ConnectionUrls.STAGING.value
+    host = ConnectionUrls.LOCALHOST.value
     min_wait = 1000
     max_wait = 2000
 
