@@ -9,7 +9,6 @@ class HivebuyUrls(Enum):
     PUR_ORDERS_URL = "company/purchase-order/"
 
 
-
 class ConnectionUrls(Enum):
     LOCALHOST = "http://127.0.0.1:8000/api/"
     STAGING = "https://backend.staging.hivebuy.de/api/"

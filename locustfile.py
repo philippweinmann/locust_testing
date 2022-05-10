@@ -39,4 +39,3 @@ class HivebuyUser(HttpUser):
         # get purchase requests
         self.client.get(url=HivebuyUrls.PUR_ORDERS_URL.value)
 
-

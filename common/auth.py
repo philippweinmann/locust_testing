@@ -13,4 +13,4 @@ def login(client):
     response = client.get(url=HivebuyUrls.AUTH_URL.value, data=login_data)
 
     # don't continue if the authentification failed
-    response.raise_for_status()
+    # response.raise_for_status()
