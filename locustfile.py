@@ -1,6 +1,7 @@
 from locust import HttpUser, task, tag, between
+
+from common import auth
 from urls import HivebuyUrls, ConnectionUrls
-import os
 
 
 class HivebuyUser(HttpUser):
@@ -12,16 +13,7 @@ class HivebuyUser(HttpUser):
     wait_time = between(0.5, 1)
 
     def on_start(self):
-        login_data = {
-            "email": os.environ.get("STEFAN_EMAIL", "stefan+1@hivebuy.de"),
-            "password": os.environ.get("STEFAN_PASSWORD", "Change-Me1!")
-        }
-
-        # cookies are automatically saved and sent
-        response = self.client.get(url=HivebuyUrls.AUTH_URL.value, data=login_data)
-
-        # don't continue if the authentification failed
-        response.raise_for_status()
+        auth.login(self.client)
 
     @tag('get_all_users')
     @task
