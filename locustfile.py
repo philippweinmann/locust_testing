@@ -27,4 +27,16 @@ class HivebuyUser(HttpUser):
         # get purchase requests
         self.client.get(url=HivebuyUrls.PUR_URL.value)
 
+    @tag('get_all_polls')
+    @task
+    def get_purchase_requests(self):
+        # get purchase requests
+        self.client.get(url=HivebuyUrls.PUR_URL.value)
+
+    @tag('get_all_po')
+    @task
+    def get_purchase_requests(self):
+        # get purchase requests
+        self.client.get(url=HivebuyUrls.PUR_ORDERS_URL.value)
+
 
