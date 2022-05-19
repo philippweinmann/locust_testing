@@ -1,7 +1,7 @@
 from locust import HttpUser, task, tag, between
 
 from common import auth
-from urls import HivebuyUrls, ConnectionUrls
+from urls import HivebuyUrls, ConnectionUrls, DashboardUrls
 
 
 class HivebuyUser(HttpUser):
@@ -15,27 +15,10 @@ class HivebuyUser(HttpUser):
     def on_start(self):
         auth.login(self.client)
 
-    @tag('get_all_users')
-    @task
-    def get_users(self):
-        # get users
-        self.client.get(url=HivebuyUrls.USER_URL.value)
 
-    @tag('get_all_pur')
+    @tag('load dashboard')
     @task
-    def get_purchase_requests(self):
-        # get purchase requests
-        self.client.get(url=HivebuyUrls.PUR_URL.value)
-
-    @tag('get_all_polls')
-    @task
-    def get_purchase_requests(self):
-        # get purchase requests
-        self.client.get(url=HivebuyUrls.PUR_URL.value)
-
-    @tag('get_all_po')
-    @task
-    def get_purchase_requests(self):
-        # get purchase requests
-        self.client.get(url=HivebuyUrls.PUR_ORDERS_URL.value)
+    def load_dashboard(self):
+        for url in DashboardUrls:
+            self.client.get(url=url.value)
 
