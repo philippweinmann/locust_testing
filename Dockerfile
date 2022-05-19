@@ -8,4 +8,7 @@ COPY . .
 
 # install dependencies
 RUN pip install -r requirements.txt
+
+EXPOSE 80
+
 CMD ["locust"]

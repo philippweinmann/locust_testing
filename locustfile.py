@@ -10,7 +10,7 @@ class HivebuyUser(HttpUser):
     max_wait = 2000
 
     # limit number of requests by adding a wait time.
-    wait_time = between(0.5, 1)
+    wait_time = between(0.1, 0.2)
 
     def on_start(self):
         auth.login(self.client)
