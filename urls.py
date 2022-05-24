@@ -27,3 +27,7 @@ class DashboardUrls(Enum):
 class ConnectionUrls(Enum):
     LOCALHOST = "http://127.0.0.1:8000/api/"
     STAGING = "https://backend.staging.hivebuy.de/api/"
+
+
+class NoImagesUrls(Enum):
+    PAYMENT_METHODS = "company/payment-method/"
