@@ -14,8 +14,7 @@ class DashboardUrls(Enum):
     PURCHASE_REQUESTS = "company/purchase-request/?actionRequired=true&pageSize=3&requestedBy=248c8c5d-a1d3-4da7-8cba" \
                         "-749335e17925&ordering=-requested_at"
     DEPARTMENT = "company/department/"
-    DASHBOARD_PUR_1 = "company/dashboard-purchase-request/?requested_at__gte=2022-04-19T09:44:26.586Z&requested_by" \
-                      "=248c8c5d-a1d3-4da7-8cba-749335e17925"
+    DASHBOARD_PUR_1 = "company/my-purchase-request/?pageSize=8"
     PUR_O = "company/purchase-order/?page=1&pageSize=5&ordering=&actionRequired=true&hideClosed=true"
     MEMBERS = "company/members/?image=true"
     USER = "company/user/"
