@@ -14,7 +14,7 @@ class DashboardUrls(Enum):
     PURCHASE_REQUESTS = "company/purchase-request/?actionRequired=true&pageSize=3&requestedBy=248c8c5d-a1d3-4da7-8cba" \
                         "-749335e17925&ordering=-requested_at"
     DEPARTMENT = "company/department/"
-    DASHBOARD_PUR_1 = "company/my-purchase-request/?pageSize=8"
+    DASHBOARD_PUR_1 = "company/my-purchase-request/?pageSize=10"
     PUR_O = "company/purchase-order/?page=1&pageSize=5&ordering=&actionRequired=true&hideClosed=true"
     MEMBERS = "company/members/?image=true"
     USER = "company/user/"
@@ -26,6 +26,7 @@ class DashboardUrls(Enum):
 class ConnectionUrls(Enum):
     LOCALHOST = "http://127.0.0.1:8000/api/"
     STAGING = "https://backend.staging.hivebuy.de/api/"
+    DEVELOPMENT = "https://backend.development.hivebuy.de/api/"
 
 
 class NoImagesUrls(Enum):

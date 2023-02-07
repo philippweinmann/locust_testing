@@ -5,12 +5,12 @@ from urls import HivebuyUrls, ConnectionUrls, DashboardUrls, NoImagesUrls
 
 
 class HivebuyUser(HttpUser):
-    host = ConnectionUrls.LOCALHOST.value
+    host = ConnectionUrls.DEVELOPMENT.value
     min_wait = 1000
     max_wait = 2000
 
     # limit number of requests by adding a wait time.
-    wait_time = between(10, 20)
+    wait_time = between(8, 12)
 
     def on_start(self):
         auth.login(self.client)
